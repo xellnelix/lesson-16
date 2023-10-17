@@ -1,16 +1,16 @@
 package ru.otus.lesson16;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 
 public class PhoneBook {
-	private final HashMap<String, Set<String>> book = new HashMap<>();
+	private final Map<String, Set<String>> book = new HashMap<>();
 
 	public void add(String key, String number) {
 		if (number.length() != 11) {
-			System.out.println("Неверная длина телефонного номера \"" +  number + "\"");
-			return;
+			throw new RuntimeException();
 		}
 		if (!book.containsKey(key)) {
 			book.put(key, new HashSet<>());
